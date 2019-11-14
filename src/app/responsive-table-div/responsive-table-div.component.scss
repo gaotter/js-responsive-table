@@ -9,8 +9,6 @@
     .header {
         border: red solid 1px;
         padding: 3px;
-        //  width: $columnwidth;
-        //flex:1;
     }
 
     .header-rows,
@@ -23,8 +21,14 @@
     .cell {
         border: black solid 1px;
         padding: 3px;
-        // width: $columnwidth;
-       // flex:1;
+       // transition: 0.2s ease-out;
+       
+       transition: max-height 0.2s ease-out;
+    }
+
+    .cellheader {
+        display: inline;
+        display: none;
     }
 }
 
@@ -54,10 +58,7 @@
     }
 }
 
-@mixin responsive-limit($max-width,  $pattern) {
-
-
-
+@mixin responsive-limit($max-width,  $pattern, $min-height) {
 
     @media (max-width: $max-width) {
         $count: 0;
@@ -65,6 +66,7 @@
         .header-rows,
         .rows {
             flex-wrap: wrap;
+            
         }
 
         @each $var in $pattern {
@@ -77,20 +79,28 @@
                 }
 
                 .cell:nth-child(#{$count}) {
-                    display: block;
                     width: 100%;
                     flex: auto;
-                }
+                    .cellheader {
+                        display: inline;
+                        
+                    }
 
+                }
                 .cell:nth-child(#{$count}) {
                     overflow: hidden;
-                    //max-height: 0;
+                    max-height: 0;
+                    min-height: 0;
+                    padding: 0;
+                    border: 0;
                 }
 
-                tr.show .cell {
+                .rows.show .cell {
                     overflow: show;
                     background-color: red;
-                    max-height: 500px;
+                    max-height: 300px;
+                   // min-height: $min-height;
+                   transition: max-height 0.2s ease-in;
                 }
 
 
@@ -114,8 +124,8 @@
     }
 }
 
-@include initalValues((2, 1, 1, 1, 2, 1, 1, 1, 1, 1));
+// @include initalValues((2, 1, 1, 1, 2, 1, 1, 1, 1, 1));
 
-@include responsive-limit(1120px,  (0, 1, 0, 0, 1 ));
+// @include responsive-limit(1120px,  (0, 1, 0, 0, 1 ));
 
-@include responsive-limit(800px, (0, 1, 1, 2, 1 ));
+// @include responsive-limit(800px, (0, 1, 1, 2, 1 ));

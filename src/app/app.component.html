@@ -11,13 +11,60 @@
 				<div class="content"  >{{d.value}}</div>
 			</td>
 		</tr> -->
-		<!-- <tr *ngFor="let r of testdata.rows" >
+<!-- <tr *ngFor="let r of testdata.rows" >
 			<td *ngFor="let d of r.testd; let i = index" >
 				<div class="div-header"  >{{testdata.testheaders[i]}}</div>
 				<div class="content"  >{{d.value}}</div>
 			</td>
 		</tr> -->
-	<!-- </tbody>
+<!-- </tbody>
 </mgmo-responsive-table> -->
 
-<app-responsive-table-div></app-responsive-table-div>
+<app-responsive-table-div>
+	<ng-container headertamplate>
+		<div class=header-rows>
+			<div class="header">
+				reg date
+			</div>
+			<div class="header">
+				agent
+			</div>
+			<div class="header">
+				price
+			</div>
+			<div class="header">
+				as price
+			</div>
+			<div class="header">
+				sq mt
+			</div>
+			<div class="header">
+				t time
+			</div>
+		</div>
+	</ng-container>
+	<ng-container rowtemplate>
+		<div *ngFor="let sale of testData.saleHistory.saleHistoryList" class="rows" [ngClass]="{'show':sale.show}"
+			(click)="sale.show = !sale.show">
+			<div class="cell">
+				<div class="cellheader">reg date</div> {{sale.registeredDate}}
+			</div>
+			<div class="cell">
+				<div class="cellheader"> agent</div> {{sale.estateAgent}} <div (click)="showPopup($event)">cc</div>
+				<div class="popup" [ngClass]="{'hidden':hidden}"></div>
+			</div>
+			<div class="cell">
+				<div class="cellheader">price</div> {{sale.salesPrice}}
+			</div>
+			<div class="cell">
+				<div class="cellheader">as price</div> {{sale.priceAssumption}}
+			</div>
+			<div class="cell">
+				<div class="cellheader">sq mt</div> {{sale.squareMeterPrice}}
+			</div>
+			<div class="cell">
+				<div class="cellheader">t time</div> {{sale.transactionTime}}
+			</div>
+		</div>
+	</ng-container>
+</app-responsive-table-div>

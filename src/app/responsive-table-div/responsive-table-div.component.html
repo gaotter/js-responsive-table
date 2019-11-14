@@ -1,12 +1,6 @@
 <div class="table">
   <div class=header-rows>
-    <div *ngFor="let header of model.headers" class="header">
-      {{header}}
-    </div>
+    <ng-content select="[headertamplate]"></ng-content>
   </div>
-  <div *ngFor="let cells of model.rows" class="rows">
-    <div *ngFor="let cell of cells" class="cell">
-      {{cell}}
-    </div>
-  </div>
+  <ng-content select="[rowtemplate]"  ></ng-content>
 </div>
