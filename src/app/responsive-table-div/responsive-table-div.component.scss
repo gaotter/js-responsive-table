@@ -1,0 +1,121 @@
+.table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+    $columnwidth: 100px;
+
+    .header {
+        border: red solid 1px;
+        padding: 3px;
+        //  width: $columnwidth;
+        //flex:1;
+    }
+
+    .header-rows,
+    .rows {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .cell {
+        border: black solid 1px;
+        padding: 3px;
+        // width: $columnwidth;
+       // flex:1;
+    }
+}
+
+@mixin initalValues($widths) {
+    $count-w: 0;
+
+    @each $width in $widths {
+        $count-w: $count-w + 1;
+
+        .cell:nth-child(#{$count-w}) {
+            flex: #{$width};
+        }
+
+        .header:nth-child(#{$count-w}) {
+            flex: #{$width};
+        }
+    }
+
+    $count-w: $count-w+1;
+
+    .cell:nth-child(1n+#{$count-w}) {
+        flex: 1;
+    }
+
+    .header:nth-child(1n+#{$count-w}) {
+        flex: 1;
+    }
+}
+
+@mixin responsive-limit($max-width,  $pattern) {
+
+
+
+
+    @media (max-width: $max-width) {
+        $count: 0;
+
+        .header-rows,
+        .rows {
+            flex-wrap: wrap;
+        }
+
+        @each $var in $pattern {
+            $count: ($count + 1);
+
+            @if($var > 0) {
+                .cell:nth-child(#{$count}) {
+                    order: $var;
+                    color: blue;
+                }
+
+                .cell:nth-child(#{$count}) {
+                    display: block;
+                    width: 100%;
+                    flex: auto;
+                }
+
+                .cell:nth-child(#{$count}) {
+                    overflow: hidden;
+                    //max-height: 0;
+                }
+
+                tr.show .cell {
+                    overflow: show;
+                    background-color: red;
+                    max-height: 500px;
+                }
+
+
+                .cell:nth-child(#{$count}) .div-header {
+                    display: initial;
+                }
+
+                .header:nth-child(#{$count}) {
+                    display: none;
+                }
+            }
+        }
+
+        $count:$count+1;
+
+        .cell:nth-child(1n+#{$count}) {
+            order: 0;
+            color: green;
+        }
+
+    }
+}
+
+@include initalValues((2, 1, 1, 1, 2, 1, 1, 1, 1, 1));
+
+@include responsive-limit(1120px,  (0, 1, 0, 0, 1 ));
+
+@include responsive-limit(800px, (0, 1, 1, 2, 1 ));
