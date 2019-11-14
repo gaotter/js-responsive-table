@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 
 import { ResponsiveTableModule } from './responsive-table/modules/responsive-table.module';
 import { ResponsiveTableDivComponent } from './responsive-table-div/responsive-table-div.component';
+import { HelloComponent } from './hello.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ResponsiveTableModule],
-  declarations: [AppComponent, ResponsiveTableDivComponent],
+  declarations: [AppComponent, ResponsiveTableDivComponent, HelloComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

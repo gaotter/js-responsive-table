@@ -9,7 +9,7 @@ import { Component, OnInit, ViewEncapsulation, ContentChild, ElementRef, AfterVi
 export class ResponsiveTableComponent implements OnInit, AfterViewInit {
 
 
-  @ViewChild('tbody') tbody: ElementRef;
+  @ViewChild('tbody', { static: true }) tbody: ElementRef;
 
   constructor() { }
 
