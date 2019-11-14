@@ -1,0 +1,265 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'my-app',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+  testheaders = ["h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8", "h9", "h10", "h11"];
+
+
+
+  testdata = {
+    testheaders:["h1", "h2", "h3", "h4", "h5", "h6", "h7", "h8", "h9", "h10", "h11"],
+    rows: [
+      {
+        testd: [
+          {
+            show:false,
+            value:"1"
+          },
+          {
+            show:false,
+            value:"2"
+          },
+          {
+            show:false,
+            value:"3"
+          },
+          {
+            show:false,
+            value:"4"
+          },
+          {
+            show:false,
+            value:"5"
+          },
+          {
+            show:false,
+            value:"6"
+          },
+          {
+            show:false,
+            value:"7"
+          },
+          {
+            show:false,
+            value:"8"
+          },
+          {
+            show:false,
+            value:"9"
+          },
+          {
+            show:false,
+            value:"10"
+          },
+          {
+            show:false,
+            value:"11"
+          }
+          ],
+          
+      },
+      {
+        testd: [
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          }
+          ],
+          
+      },
+      {
+        testd: [
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          }
+          ],
+          
+      },
+      {
+        testd: [
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          }
+          ],
+          
+      },
+      {
+        testd: [
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          },
+          {
+            show:false,
+            value:"sdwdw"
+          }
+          ],
+          
+      },
+    ]
+  }
+
+}
+

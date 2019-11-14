@@ -1,0 +1,21 @@
+<mgmo-responsive-table>
+	<thead>
+		<tr>
+			<th *ngFor="let h of testdata.testheaders">{{h}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let r of testdata.rows" [ngClass]="{'show':r.show}" (click)="r.show = !r.show">
+			<td *ngFor="let d of r.testd; let i = index" >
+				<div class="div-header"  >{{testdata.testheaders[i]}}</div>
+				<div class="content"  >{{d.value}}</div>
+			</td>
+		</tr>
+		<!-- <tr *ngFor="let r of testdata.rows" >
+			<td *ngFor="let d of r.testd; let i = index" >
+				<div class="div-header"  >{{testdata.testheaders[i]}}</div>
+				<div class="content"  >{{d.value}}</div>
+			</td>
+		</tr> -->
+	</tbody>
+</mgmo-responsive-table>

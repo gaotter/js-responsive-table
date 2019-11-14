@@ -1,0 +1,86 @@
+@mixin responsive-limit($max-width, $nth-start, $pattern) {
+
+  @media (max-width: $max-width) {
+    $count: 0;
+
+    @each $var in $pattern {
+      $count: ($count + 1);
+
+      @if($var > 0) {
+        .tblwrapper td:nth-child(#{$count}) {
+          order: $var;
+          color: blue;
+        }
+
+        .tblwrapper td:nth-child(#{$count}) {
+          display: block;
+          width: 100%;
+          flex: auto;
+        }
+
+        .tblwrapper td:nth-child(#{$count}) {
+          overflow: hidden;
+          max-height: 0;
+        }
+
+        .tblwrapper tr.show td {
+          overflow: show;
+          background-color: red;
+          max-height: 500px;
+        }
+
+
+        .tblwrapper td:nth-child(#{$count}) .div-header {
+          display: initial;
+        }
+
+        .tblwrapper th:nth-child(#{$count}) {
+          display: none;
+        }
+      }
+    }
+
+    $count:$count+1;
+
+    .tblwrapper td:nth-child(1n+#{$count}) {
+      order: 0;
+      color: green;
+    }
+
+  }
+}
+
+.div-header {
+  display: none;
+  padding-right: 3px;
+  font-style: bold;
+}
+
+table,
+tbody,
+thead {
+  display: inline-block;
+  width: 90%;
+}
+
+tr {
+  display: flex;
+
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+th {
+  flex: 1;
+  text-align: left;
+}
+
+td {
+  flex: 1;
+}
+
+//@include responsive-limit(767px, 5, (4, 2, 1));
+
+//@include responsive-limit(1024px, 7, (1, 1, 1));
+
+@include responsive-limit(1000px, 7, (0, 0, 0, 0, 1, ));
