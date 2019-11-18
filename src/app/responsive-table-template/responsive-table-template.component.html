@@ -1,0 +1,19 @@
+<app-responsive-table-div>
+    <ng-container headertamplate>
+        <div class="header-rows">
+            <div class="header" *ngFor="let header of headers">
+               <ng-container *ngTemplateOutlet="header.template"></ng-container>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container rowtemplate>
+        <div *ngFor="let row of rowData" class="rows" [ngClass]="{'show':row.show}" (click)="row.show = !row.show">
+            <div class="cell" *ngFor="let cellTemplate of cells; let i = index">
+                <div class="cellheader">
+                    <ng-container *ngTemplateOutlet="headers[i].template"></ng-container>
+                </div>
+                <ng-container *ngTemplateOutlet="cellTemplate.template;context:{dataentry:row}" ></ng-container>
+            </div>
+        </div>
+    </ng-container>
+</app-responsive-table-div>

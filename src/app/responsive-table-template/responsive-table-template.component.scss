@@ -1,0 +1,22 @@
+@import "./../responsive-table-div/responsive-table-div.component.scss";
+
+p {
+    font-family: Lato;
+}
+
+.popup {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #eeffee;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+@include initalValues((2, 3, 1, 1, 2, 1, 1, 1, 1, 1));
+
+@include responsive-limit(1120px, (0, 1, 0, 0, 1), 20px);
+
+@include responsive-limit(800px, (0, 1, 1, 2, 1), 20px);

@@ -7,10 +7,13 @@ import { AppComponent } from './app.component';
 import { ResponsiveTableModule } from './responsive-table/modules/responsive-table.module';
 import { ResponsiveTableDivComponent } from './responsive-table-div/responsive-table-div.component';
 import { HelloComponent } from './hello.component';
+import { ResponsiveTableTemplateComponent } from './responsive-table-template/responsive-table-template.component';
+import { ElementSelectorDirective } from './element-selector.directive';
+import { TesterComponent } from './tester/tester.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ResponsiveTableModule],
-  declarations: [AppComponent, ResponsiveTableDivComponent, HelloComponent],
+  declarations: [AppComponent, ResponsiveTableDivComponent, HelloComponent, ResponsiveTableTemplateComponent, ElementSelectorDirective, TesterComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

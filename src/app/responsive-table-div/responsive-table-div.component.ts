@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-responsive-table-div',
@@ -6,46 +6,6 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./responsive-table-div.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ResponsiveTableDivComponent implements OnInit {
-
-  @Input()
-  headers:string[] = [];
-
-
-  constructor() { }
-
-  onRowClick() {
-    console.log("click");
-  }
-
-  ngOnInit() {
-    const numOfColumns = 10;
-    const numberOfRows = 10;
-
-
-    for (let i = 0; i < numOfColumns; i++) {
-      const headers = `header${i}`;
-      this.model.headers.push(headers);
-
-      for (let j = 0; j < numberOfRows; j++) {
-        const row = `row${j}`;
-        const cells = [];
-        for (let f = 0; f < numOfColumns; f++) {
-          const cell = `cell ${f} in  ${row} ${Math.floor((Math.random() * 1000000000) + 1)}`;
-          cells.push(cell);
-        }
-        this.model.rows.push(cells);
-
-      }
-    }
-  }
-
-  model: {
-    headers: string[];
-    rows: any[][];
-  } = {
-      headers: [],
-      rows: []
-    }
+export class ResponsiveTableDivComponent {
 
 }

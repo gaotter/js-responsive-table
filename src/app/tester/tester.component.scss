@@ -1,0 +1,8 @@
+@import "./../css/responsive-table-mixins.scss";
+
+
+@include initalValues((2, 3, 1, 1, 2, 1, 1, 1, 1, 1));
+
+@include responsive-limit(1120px, (0, 1, 0, 0, 1), 20px);
+
+@include responsive-limit(800px, (0, 1, 1, 2, 1), 20px);

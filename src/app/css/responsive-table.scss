@@ -1,0 +1,33 @@
+.table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+    $columnwidth: 100px;
+
+    .header {
+        border: red solid 1px;
+        padding: 3px;
+    }
+
+    .header-rows,
+    .rows {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .cell {
+        border: black solid 1px;
+        padding: 3px;
+        // transition: 0.2s ease-out;
+
+        transition: max-height 0.2s ease-out;
+    }
+
+    .cellheader {
+        display: inline;
+        display: none;
+    }
+}

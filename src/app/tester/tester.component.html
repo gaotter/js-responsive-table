@@ -1,0 +1,47 @@
+<div class="table">
+    <div class=header-rows>
+        <div class="header-rows">
+            <div class="header">
+                reg date
+            </div>
+            <div class="header">
+                agent
+            </div>
+            <div class="header">
+                price
+            </div>
+            <div class="header">
+                as price
+            </div>
+            <div class="header">
+                sq mt
+            </div>
+            <div class="header">
+                t time
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let sale of testData.saleHistory.saleHistoryList" class="rows" [ngClass]="{'show':sale.show}"
+        (click)="sale.show = !sale.show">
+        <div class="cell">
+            <div class="cellheader">reg date</div> {{sale.registeredDate}}
+        </div>
+        <div class="cell">
+            <div class="cellheader"> agent</div> {{sale.estateAgent}}
+            <div class="popup" [ngClass]="{'hidden':hidden}"></div>
+        </div>
+        <div class="cell">
+            <div class="cellheader">price</div> {{sale.salesPrice}}
+        </div>
+        <div class="cell">
+            <div class="cellheader">as price</div> {{sale.priceAssumption}}
+        </div>
+        <div class="cell">
+            <div class="cellheader">sq mt</div> {{sale.squareMeterPrice}}
+        </div>
+        <div class="cell">
+            <div class="cellheader">t time</div> {{sale.transactionTime}}
+        </div>
+    </div>
+
+</div>
