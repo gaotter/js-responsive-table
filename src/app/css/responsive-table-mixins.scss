@@ -1,18 +1,29 @@
-@mixin initalValues($widths) {
-
-
+@mixin initalValues($flexValues) {
 
     $count-w: 0;
 
-    @each $width in $widths {
+    @each $flexValue in $flexValues {
         $count-w: $count-w + 1;
+        @debug $flexValue;
 
         .cell:nth-child(#{$count-w}) {
-            flex: #{$width};
+            flex-grow: map-get($map: $flexValue, $key:"flex-grow");
+            flex-shrink: map-get($map: $flexValue, $key:"flex-shrink");
+            flex-basis: map-get($map: $flexValue, $key:"flex-basis");
+            min-width: map-get($map: $flexValue, $key:"min-width" );
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .header:nth-child(#{$count-w}) {
-            flex: #{$width};
+            flex-grow: map-get($map: $flexValue, $key:"flex-grow");
+            flex-shrink: map-get($map: $flexValue, $key:"flex-shrink");
+            flex-basis: map-get($map: $flexValue, $key:"flex-basis");
+            min-width: map-get($map: $flexValue, $key:"min-width" );
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
     }
 
@@ -113,5 +124,12 @@
     $arr: mapValueToArray($cols);
     @include responsive-limit($limit, $arr);
 }
+
 $show: 0;
 $hide: 1;
+
+$small:("flex-grow":1, "flex-shrink":0, "flex-basis":50px, "min-width":50px);
+$medium:("flex-grow":2, "flex-shrink":0, "flex-basis":200px, "min-width":200px);
+$large:("flex-grow":4, "flex-shrink":0, "flex-basis":300px, "min-width":300px);
+
+@debug map-get($map: $small, $key: "flex-basis")
