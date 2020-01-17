@@ -27,7 +27,7 @@
     }
 }
 
-@mixin responsive-limit($max-width, $pattern, $min-height) {
+@mixin responsive-limit($max-width, $pattern) {
 
     @media (max-width: $max-width) {
         $count: 0;
@@ -96,3 +96,22 @@
         }
     }
 }
+
+
+@function mapValueToArray($cols) {
+    $arr: ();
+
+    @each $var,
+    $val in $cols {
+        $arr: append($arr, $val);
+    }
+
+    @return $arr;
+}
+
+@mixin responsive-colums($limit, $cols) {
+    $arr: mapValueToArray($cols);
+    @include responsive-limit($limit, $arr);
+}
+$show: 0;
+$hide: 1;

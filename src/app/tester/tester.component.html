@@ -1,46 +1,47 @@
 <div class="table">
     <div class=header-rows>
         <div class="header-rows">
-            <div class="header">
-                reg date
+            <div class="header" (click)="onSort('estateType')">
+                estateType
             </div>
-            <div class="header">
-                agent
+            <div class="header" (click)="onSort('address')">
+                address
             </div>
-            <div class="header">
-                price
+            <div class="header" (click)="onSort('lastSaleDate')">
+                lastSaleDate
             </div>
-            <div class="header">
-                as price
+            <div class="header" (click)="onSort('lastSalesPrice')">
+                lastSalesPrice
             </div>
-            <div class="header">
-                sq mt
+            <div class="header" (click)="onSort('livingArea')">
+                livingArea
             </div>
-            <div class="header">
+            <div class="header" (click)="onSort('transactionTime')">
                 t time
             </div>
         </div>
     </div>
-    <div *ngFor="let sale of testData.saleHistory.saleHistoryList" class="rows" [ngClass]="{'show':sale.show}"
+    <div *ngFor="let sale of mapped" class="rows" [ngClass]="{'show':sale.show}"
         (click)="sale.show = !sale.show">
         <div class="cell">
-            <div class="cellheader">reg date</div> {{sale.registeredDate}}
+            <div class="cellheader">estateType</div> {{sale.row.estateType}}
         </div>
         <div class="cell">
-            <div class="cellheader"> agent</div> {{sale.estateAgent}}
+            <div></div>
+            <div class="cellheader"> address</div> {{sale.row.address}}
             <div class="popup" [ngClass]="{'hidden':hidden}"></div>
         </div>
         <div class="cell">
-            <div class="cellheader">price</div> {{sale.salesPrice}}
+            <div class="cellheader">price</div> {{sale.row.lastSaleDate}}
         </div>
         <div class="cell">
-            <div class="cellheader">as price</div> {{sale.priceAssumption}}
+            <div class="cellheader">as price</div> {{sale.row.lastSalesPrice}}
         </div>
         <div class="cell">
-            <div class="cellheader">sq mt</div> {{sale.squareMeterPrice}}
+            <div class="cellheader">sq mt</div> {{sale.row.livingArea}}
         </div>
         <div class="cell">
-            <div class="cellheader">t time</div> {{sale.transactionTime}}
+            <div class="cellheader">t time</div> {{sale.row.transactionTime}}
         </div>
     </div>
 

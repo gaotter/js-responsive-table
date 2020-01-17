@@ -1,8 +1,13 @@
 @import "./../css/responsive-table-mixins.scss";
 
+$flexValues: ("estateType":2, "address":3, "lastSaleDate":1, "lastSalesPrice":1, "livingArea":1, "time":1);
 
-@include initalValues((2, 3, 1, 1, 2, 1, 1, 1, 1, 1));
+$flexes: mapValueToArray($flexValues);
 
-@include responsive-limit(1120px, (0, 1, 0, 0, 1), 20px);
+@include initalValues($flexes);
 
-@include responsive-limit(800px, (0, 1, 1, 2, 1), 20px);
+$columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$show);
+@include responsive-colums(1120px, $columns);
+//@include responsive-limit(1120px, (0, 1, 0, 0, 1), 20px);
+
+//@include responsive-limit(800px, (0, 1, 1, 2, 1), 20px);
