@@ -28,6 +28,7 @@ export interface IResponsiveTableHeader {
     headerDisplay: string;
     headerSelectKey?: string;
     dataSize: "small" | "medium" | "large";
+    screen: IScreenSize;
 }
 
 export interface ISortOption {
@@ -36,3 +37,9 @@ export interface ISortOption {
     desc: boolean;
     type?: "number" | "text" | "date";
 }
+
+export interface IScreenSize {
+  screenid: "screen-large" | "screen-medium" | "",
+  down:"down" | ""
+}
+

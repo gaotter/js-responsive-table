@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, Input } from '@angular/core';
-import { IResponsiveTableModel } from '../responsive-table/models/responsive-table.model';
+import { IResponsiveTableModel, ISearchTableRow } from '../responsive-table/models/responsive-table.model';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -13,5 +13,9 @@ export class ResponsiveTableDivComponent {
 
   @Input()
   tableModel:IResponsiveTableModel;
+
+  onShowClicked(searchTableRow:ISearchTableRow) {
+    searchTableRow.show = !searchTableRow.show;
+  }
 
 }

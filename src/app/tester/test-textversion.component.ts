@@ -32,6 +32,9 @@ export class TestTextversionComponent implements OnInit {
           },
           {
             value: d.floor
+          },{
+            value: d.lastSalesPrice ? d.lastSalesPrice.toString(): "0",
+            type:"number"
           }
         ]
       }
@@ -43,15 +46,36 @@ export class TestTextversionComponent implements OnInit {
       headers: [
         {
           dataSize: "medium",
-          headerDisplay: "Addresse"
+          headerDisplay: "Addresse",
+          screen:{
+            down:"down",
+            screenid:"screen-large"
+          }
         },
         {
           dataSize: "large",
-          headerDisplay: "Bekrivelse"
+          headerDisplay: "Bekrivelse",
+          screen:{
+            down:"down",
+            screenid:"screen-medium"
+          }
         },
         {
           dataSize: "small",
-          headerDisplay: "etasjer"
+          headerDisplay: "etasjer",
+          screen:{
+            down:"",
+            screenid:""
+          }
+        },
+        {
+          dataSize: "small",
+          headerDisplay: "salgs pris",
+          screen:{
+            down:"",
+            screenid:""
+          }
+          
         }
       ]
     }

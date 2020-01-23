@@ -7,14 +7,20 @@
 // @include initalValues($flexes);
 @include initalValuesStatic();
 
-$columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$show);
-@include responsive-colums(1120px, $columns);
 
-$columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$hide);
-@include responsive-colums(855px, $columns);
 
-$columns: ("estateType":$hide, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$hide);
-@include responsive-colums(745px, $columns);
+@include responsive-limitstatic(1120px, ".screen-large");
+
+@include responsive-limitstatic(855px, ".screen-medium");
+
+// $columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$show);
+// @include responsive-colums(1120px, $columns);
+
+// $columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$hide);
+// @include responsive-colums(855px, $columns);
+
+// $columns: ("estateType":$hide, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$hide);
+// @include responsive-colums(745px, $columns);
 
 
 

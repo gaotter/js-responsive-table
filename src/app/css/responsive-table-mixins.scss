@@ -37,7 +37,65 @@ $large:("flex-grow":4, "flex-shrink":0, "flex-basis":300px, "min-width":300px);
 
 }
 
-@mixin responsive-limit($max-width, $pattern) {
+@mixin responsive-limitstatic($max-width, $type) {
+
+    @media (max-width: $max-width) {
+        $count: 0;
+
+        .table {
+
+            .header-rows,
+            .rows {
+                flex-wrap: wrap;
+
+            }
+
+            .cell#{$type} {
+                order: 0;
+                color: green;
+
+                &.down {
+                    order: 1;
+                    color: blue;
+                    width: 100%;
+                    flex: auto;
+
+                    .cellheader {
+                        display: inline;
+
+                    }
+
+                    overflow: hidden;
+                    max-height: 0;
+                    min-height: 0;
+                    padding: 0;
+                    border: 0;
+
+                    .div-header {
+                        display: initial;
+                    }
+                }
+            }
+
+            .rows.show .cell {
+                overflow: show;
+                background-color: red;
+                max-height: 300px;
+                // min-height: $min-height;
+                transition: max-height 0.2s ease-in;
+            }
+
+            .header#{$type}.down {
+                display: none;
+            }
+
+        }
+    }
+}
+
+
+
+@mixin responsive-limitdynamic($max-width, $pattern) {
 
     @media (max-width: $max-width) {
         $count: 0;
@@ -121,7 +179,7 @@ $large:("flex-grow":4, "flex-shrink":0, "flex-basis":300px, "min-width":300px);
 
 @mixin responsive-colums($limit, $cols) {
     $arr: mapValueToArray($cols);
-    @include responsive-limit($limit, $arr);
+    @include responsive-limitdynamic($limit, $arr);
 }
 
 $show: 0;
