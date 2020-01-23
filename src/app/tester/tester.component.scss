@@ -10,4 +10,7 @@ $columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSales
 @include responsive-colums(1120px, $columns);
 
 $columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$hide);
-@include responsive-colums(690px, $columns);
+@include responsive-colums(855px, $columns);
+
+$columns: ("estateType":$hide, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$hide);
+@include responsive-colums(745px, $columns);

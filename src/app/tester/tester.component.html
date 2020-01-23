@@ -1,5 +1,5 @@
+<div (click)="setAsPri()">Show t</div>
 <div class="table">
-    <div class=header-rows>
         <div class="header-rows">
             <div class="header" (click)="onSort('estateType')">
                 estateType
@@ -20,7 +20,6 @@
                 t time
             </div>
         </div>
-    </div>
     <div *ngFor="let sale of mapped" class="rows" [ngClass]="{'show':sale.show}"
         (click)="sale.show = !sale.show">
         <div class="cell">

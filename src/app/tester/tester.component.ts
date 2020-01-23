@@ -30,4 +30,8 @@ export class TesterComponent implements OnInit {
     });
   }
 
+  setAsPri() {
+      
+  }
+
 }

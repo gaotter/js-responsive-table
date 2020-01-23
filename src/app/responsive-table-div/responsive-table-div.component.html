@@ -1,6 +1,20 @@
-<div class="table">
+<div class="table" *ngIf="tableModel">
+  <div class="header-rows">
+    <div class="header" *ngFor="let header of tableModel.headers">
+      {{header.headerDisplay}}
+    </div>
+  </div>
+    <div class="rows" *ngFor="let rowData of tableModel.rows">
+      <div class="cell" *ngFor="let cellData of rowData.textElements">
+        {{ cellData.value }}
+      </div>
+    </div>
+</div>
+
+
+<!-- <div class="table">
   <div class=header-rows>
     <ng-content select="[headertamplate]"></ng-content>
   </div>
   <ng-content select="[rowtemplate]"  ></ng-content>
-</div>
+</div> -->

@@ -4,7 +4,6 @@
 
     @each $flexValue in $flexValues {
         $count-w: $count-w + 1;
-        @debug $flexValue;
 
         .cell:nth-child(#{$count-w}) {
             flex-grow: map-get($map: $flexValue, $key:"flex-grow");
@@ -128,8 +127,6 @@
 $show: 0;
 $hide: 1;
 
-$small:("flex-grow":1, "flex-shrink":0, "flex-basis":50px, "min-width":50px);
+$small:("flex-grow":1, "flex-shrink":0, "flex-basis":90px, "min-width":90px);
 $medium:("flex-grow":2, "flex-shrink":0, "flex-basis":200px, "min-width":200px);
 $large:("flex-grow":4, "flex-shrink":0, "flex-basis":300px, "min-width":300px);
-
-@debug map-get($map: $small, $key: "flex-basis")
