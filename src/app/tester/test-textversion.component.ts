@@ -20,7 +20,7 @@ export class TestTextversionComponent implements OnInit {
   }
 
   mapToTableModel(): IResponsiveTableModel {
-    const mappedRows: ISearchTableRow[] = this.testData.data.map(d => {
+    const mappedRows: ISearchTableRow[] = this.testData.data.map((d,i) => {
       const mappedR: ISearchTableRow = {
         row: d,
         textElements: [
@@ -42,15 +42,15 @@ export class TestTextversionComponent implements OnInit {
       rows: mappedRows,
       headers: [
         {
-          dataSize: "small",
+          dataSize: "medium",
           headerDisplay: "Addresse"
         },
         {
-          dataSize: "small",
+          dataSize: "large",
           headerDisplay: "Bekrivelse"
         },
         {
-          dataSize: "large",
+          dataSize: "small",
           headerDisplay: "etasjer"
         }
       ]

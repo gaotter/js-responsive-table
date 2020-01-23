@@ -1,11 +1,11 @@
 <div class="table" *ngIf="tableModel">
   <div class="header-rows">
-    <div class="header" *ngFor="let header of tableModel.headers">
+    <div class="header" [ngClass]="header.dataSize" *ngFor="let header of tableModel.headers">
       {{header.headerDisplay}}
     </div>
   </div>
-    <div class="rows" *ngFor="let rowData of tableModel.rows">
-      <div class="cell" *ngFor="let cellData of rowData.textElements">
+    <div class="rows"  *ngFor="let rowData of tableModel.rows">
+      <div class="cell" [ngClass]="tableModel.headers[i].dataSize"  *ngFor="let cellData of rowData.textElements; let i = index">
         {{ cellData.value }}
       </div>
     </div>

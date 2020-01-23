@@ -4,7 +4,7 @@ $flexValues: ("estateType":$medium, "address":$large, "lastSaleDate":$small, "la
 
 $flexes: mapValueToArray($flexValues);
 
-@include initalValues($flexes);
+@include initalValuesDynamic($flexes);
 
 $columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$show);
 @include responsive-colums(1120px, $columns);

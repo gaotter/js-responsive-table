@@ -1,10 +1,11 @@
 @import "./../css/responsive-table-mixins.scss";
 
-$flexValues: ("estateType":$medium, "address":$large, "lastSaleDate":$small, "lastSalesPrice":$small, "livingArea":$small, "time":$small);
+// $flexValues: ("estateType":$medium, "address":$large, "lastSaleDate":$small, "lastSalesPrice":$small, "livingArea":$small, "time":$small);
 
-$flexes: mapValueToArray($flexValues);
+// $flexes: mapValueToArray($flexValues);
 
-@include initalValues($flexes);
+// @include initalValues($flexes);
+@include initalValuesStatic();
 
 $columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$show);
 @include responsive-colums(1120px, $columns);
@@ -17,107 +18,17 @@ $columns: ("estateType":$hide, "address":$show, "lastSaleDate":$show, "lastSales
 
 
 
-// @mixin initalValues($widths) {
+// $flexValues: ("estateType":$medium, "address":$large, "lastSaleDate":$small, "lastSalesPrice":$small, "livingArea":$small, "time":$small);
 
+// $flexes: mapValueToArray($flexValues);
 
+// @include initalValues($flexes);
 
-//     $count-w: 0;
+// $columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$show);
+// @include responsive-colums(1120px, $columns);
 
-//     @each $width in $widths {
-//         $count-w: $count-w + 1;
+// $columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$hide);
+// @include responsive-colums(855px, $columns);
 
-//         .cell:nth-child(#{$count-w}) {
-//             flex: #{$width};
-//         }
-
-//         .header:nth-child(#{$count-w}) {
-//             flex: #{$width};
-//         }
-//     }
-
-//     $count-w: $count-w+1;
-
-//     .cell:nth-child(1n+#{$count-w}) {
-//         flex: 1;
-//     }
-
-//     .header:nth-child(1n+#{$count-w}) {
-//         flex: 1;
-//     }
-// }
-
-// @mixin responsive-limit($max-width, $pattern, $min-height) {
-
-//     @media (max-width: $max-width) {
-//         $count: 0;
-
-//         .table {
-
-//             .header-rows,
-//             .rows {
-//                 flex-wrap: wrap;
-
-//             }
-
-//             @each $var in $pattern {
-//                 $count: ($count + 1);
-
-//                 @if($var > 0) {
-//                     .cell:nth-child(#{$count}) {
-//                         order: $var;
-//                         color: blue;
-//                     }
-
-//                     .cell:nth-child(#{$count}) {
-//                         width: 100%;
-//                         flex: auto;
-
-//                         .cellheader {
-//                             display: inline;
-
-//                         }
-
-//                     }
-
-//                     .cell:nth-child(#{$count}) {
-//                         overflow: hidden;
-//                         max-height: 0;
-//                         min-height: 0;
-//                         padding: 0;
-//                         border: 0;
-//                     }
-
-//                     .rows.show .cell {
-//                         overflow: show;
-//                         background-color: red;
-//                         max-height: 300px;
-//                         // min-height: $min-height;
-//                         transition: max-height 0.2s ease-in;
-//                     }
-
-
-//                     .cell:nth-child(#{$count}) .div-header {
-//                         display: initial;
-//                     }
-
-//                     .header:nth-child(#{$count}) {
-//                         display: none;
-//                     }
-//                 }
-//             }
-
-//             $count:$count+1;
-
-//             .cell:nth-child(1n+#{$count}) {
-//                 order: 0;
-//                 color: green;
-//             }
-//         }
-//     }
-// }
-
-// // @include initalValues((2, 1, 1, 1, 2, 1, 1, 1, 1, 1));
-
-// // @include responsive-limit(1120px,  (0, 1, 0, 0, 1 ));
-
-// // @include responsive-limit(800px, (0, 1, 1, 2, 1 ));
+// $columns: ("estateType":$hide, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$hide);
+// @include responsive-colums(745px, $columns);
