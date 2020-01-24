@@ -7,11 +7,17 @@
 // @include initalValues($flexes);
 @include initalValuesStatic();
 
+// 765px
 
+@include responsive-limitstatic(1520px, ".screen-large");
 
-@include responsive-limitstatic(1120px, ".screen-large");
+@include responsive-limitstatic(1120px, ".screen-semi-large");
 
-@include responsive-limitstatic(855px, ".screen-medium");
+@include responsive-limitstatic(1025px, ".screen-medium");
+
+@include responsive-limitstatic(900px, ".screen-semi-medium");
+
+@include responsive-limitstatic(765px, ".screen-small");
 
 // $columns: ("estateType":$show, "address":$show, "lastSaleDate":$show, "lastSalesPrice":$show, "livingArea":$hide, "time":$show);
 // @include responsive-colums(1120px, $columns);

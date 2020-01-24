@@ -1,22 +1,13 @@
-// @import "./../responsive-table-div/responsive-table-div.component.scss";
+@import "./../css/responsive-table-mixins.scss";
 
-// p {
-//     font-family: Lato;
-// }
+@include initalValuesStatic();
 
-// .popup {
-//     position: absolute;
-//     width: 100px;
-//     height: 100px;
-//     background: #eeffee;
+@include responsive-limitstatic(1520px, ".screen-large");
 
-//     &.hidden {
-//         display: none;
-//     }
-// }
+@include responsive-limitstatic(1120px, ".screen-semi-large");
 
-// @include initalValues((2, 3, 1, 1, 2, 1, 1, 1, 1, 1));
+@include responsive-limitstatic(1025px, ".screen-medium");
 
-// @include responsive-limit(1120px, (0, 1, 0, 0, 1), 20px);
+@include responsive-limitstatic(900px, ".screen-semi-medium");
 
-// @include responsive-limit(800px, (0, 1, 1, 2, 1), 20px);
+@include responsive-limitstatic(765px, ".screen-small");

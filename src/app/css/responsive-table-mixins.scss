@@ -1,7 +1,7 @@
-$small:("flex-grow":1, "flex-shrink":0, "flex-basis":90px, "min-width":90px);
-$medium:("flex-grow":2, "flex-shrink":0, "flex-basis":200px, "min-width":200px);
-$large:("flex-grow":4, "flex-shrink":0, "flex-basis":300px, "min-width":300px);
-
+$micro:("flex-grow":1, "flex-shrink":0, "flex-basis":70px, "min-width":70px);
+$small:("flex-grow":2, "flex-shrink":0, "flex-basis":90px, "min-width":90px);
+$medium:("flex-grow":3, "flex-shrink":0, "flex-basis":200px, "min-width":200px);
+$large:("flex-grow":5, "flex-shrink":0, "flex-basis":300px, "min-width":300px);
 
 @mixin initalValuesStatic() {
 
@@ -11,6 +11,13 @@ $large:("flex-grow":4, "flex-shrink":0, "flex-basis":300px, "min-width":300px);
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
+        &.micro {
+            flex-grow: map-get($map: $micro, $key:"flex-grow");
+            flex-shrink: map-get($map: $micro, $key:"flex-shrink");
+            flex-basis: map-get($map: $micro, $key:"flex-basis");
+            min-width: map-get($map: $micro, $key:"min-width");
+        }
 
         &.small {
             flex-grow: map-get($map: $small, $key:"flex-grow");
@@ -185,11 +192,6 @@ $large:("flex-grow":4, "flex-shrink":0, "flex-basis":300px, "min-width":300px);
 $show: 0;
 $hide: 1;
 
-
-
-
-
-
 @mixin initalValuesDynamic($flexValues) {
 
     $count-w: 0;
@@ -228,97 +230,3 @@ $hide: 1;
         flex: 1;
     }
 }
-
-// @mixin responsive-limit($max-width, $pattern) {
-
-//     @media (max-width: $max-width) {
-//         $count: 0;
-
-//         .table {
-
-//             .header-rows,
-//             .rows {
-//                 flex-wrap: wrap;
-
-//             }
-
-//             @each $var in $pattern {
-//                 $count: ($count + 1);
-
-//                 @if($var > 0) {
-//                     .cell:nth-child(#{$count}) {
-//                         order: $var;
-//                         color: blue;
-//                     }
-
-//                     .cell:nth-child(#{$count}) {
-//                         width: 100%;
-//                         flex: auto;
-
-//                         .cellheader {
-//                             display: inline;
-
-//                         }
-
-//                     }
-
-//                     .cell:nth-child(#{$count}) {
-//                         overflow: hidden;
-//                         max-height: 0;
-//                         min-height: 0;
-//                         padding: 0;
-//                         border: 0;
-//                     }
-
-//                     .rows.show .cell {
-//                         overflow: show;
-//                         background-color: red;
-//                         max-height: 300px;
-//                         // min-height: $min-height;
-//                         transition: max-height 0.2s ease-in;
-//                     }
-
-
-//                     .cell:nth-child(#{$count}) .div-header {
-//                         display: initial;
-//                     }
-
-//                     .header:nth-child(#{$count}) {
-//                         display: none;
-//                     }
-//                 }
-//             }
-
-//             $count:$count+1;
-
-//             .cell:nth-child(1n+#{$count}) {
-//                 order: 0;
-//                 color: green;
-//             }
-//         }
-//     }
-// }
-
-
-// @function mapValueToArray($cols) {
-//     $arr: ();
-
-//     @each $var,
-//     $val in $cols {
-//         $arr: append($arr, $val);
-//     }
-
-//     @return $arr;
-// }
-
-// @mixin responsive-colums($limit, $cols) {
-//     $arr: mapValueToArray($cols);
-//     @include responsive-limit($limit, $arr);
-// }
-
-// $show: 0;
-// $hide: 1;
-
-// $small:("flex-grow":1, "flex-shrink":0, "flex-basis":90px, "min-width":90px);
-// $medium:("flex-grow":2, "flex-shrink":0, "flex-basis":200px, "min-width":200px);
-// $large:("flex-grow":4, "flex-shrink":0, "flex-basis":300px, "min-width":300px);

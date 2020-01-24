@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { mockData } from '../test.model';
-import { IResponsiveTableModel, ISearchTableRow } from '../responsive-table/models/responsive-table.model';
+import { IResponsiveTableModelText, ISearchTableRow } from '../responsive-table/models/responsive-table.model';
 
 @Component({
   selector: 'app-test-textversion',
@@ -10,7 +10,7 @@ import { IResponsiveTableModel, ISearchTableRow } from '../responsive-table/mode
 export class TestTextversionComponent implements OnInit {
 
   testData = { ...mockData };
-  tableModel:IResponsiveTableModel = null;
+  tableModel:IResponsiveTableModelText = null;
 
   constructor() { }
 
@@ -19,7 +19,7 @@ export class TestTextversionComponent implements OnInit {
     this.tableModel = this.mapToTableModel();
   }
 
-  mapToTableModel(): IResponsiveTableModel {
+  mapToTableModel(): IResponsiveTableModelText {
     const mappedRows: ISearchTableRow[] = this.testData.data.map((d,i) => {
       const mappedR: ISearchTableRow = {
         row: d,
@@ -35,13 +35,15 @@ export class TestTextversionComponent implements OnInit {
           },{
             value: d.lastSalesPrice ? d.lastSalesPrice.toString(): "0",
             type:"number"
+          },{
+            value:d.shareNumber ? d.shareNumber : "0"
           }
         ]
       }
       return mappedR;
     })
 
-    const model: IResponsiveTableModel = {
+    const model: IResponsiveTableModelText = {
       rows: mappedRows,
       headers: [
         {
@@ -49,7 +51,7 @@ export class TestTextversionComponent implements OnInit {
           headerDisplay: "Addresse",
           screen:{
             down:"down",
-            screenid:"screen-large"
+            screenid:"screen-semi-large"
           }
         },
         {
@@ -61,21 +63,28 @@ export class TestTextversionComponent implements OnInit {
           }
         },
         {
-          dataSize: "small",
+          dataSize: "micro",
           headerDisplay: "etasjer",
           screen:{
-            down:"",
-            screenid:""
+            down:"down",
+            screenid:"screen-semi-medium"
           }
         },
         {
           dataSize: "small",
           headerDisplay: "salgs pris",
           screen:{
+            down:"down",
+            screenid:"screen-small"
+          }   
+        },
+        {
+          dataSize: "micro",
+          headerDisplay: "share",
+          screen:{
             down:"",
             screenid:""
-          }
-          
+          }          
         }
       ]
     }

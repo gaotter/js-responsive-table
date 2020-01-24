@@ -14,6 +14,9 @@ import { TestTemplateversionComponent } from './tester/test-templateversion.comp
 import { TestTextversionComponent } from './tester/test-textversion.component';
 import { TextValuePipe } from './pips/text-value.pipe';
 
+
+
+
 @NgModule({
   imports: [BrowserModule, FormsModule, ResponsiveTableModule],
   declarations: [AppComponent, ResponsiveTableDivComponent, HelloComponent, ResponsiveTableTemplateComponent, ElementSelectorDirective, TesterComponent, TestTemplateversionComponent, TestTextversionComponent, TextValuePipe],
