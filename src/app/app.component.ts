@@ -4,7 +4,8 @@ import { mockData } from './test.model';
 enum selections {
   basic = "Basic",
   div = "Model based",
-  template = "Template based"
+  template = "Template based",
+  divscroll = "Model based scroll"
 }
 
 
@@ -15,7 +16,7 @@ enum selections {
 })
 export class AppComponent {
  
-  selected:selections = selections.basic;
+  selected:selections = selections.divscroll;
   selectionsref = selections;
 
   sels = Object.keys(selections).map(key => { 

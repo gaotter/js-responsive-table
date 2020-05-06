@@ -44,6 +44,12 @@ $large:("flex-grow":5, "flex-shrink":0, "flex-basis":300px, "min-width":300px);
 
 }
 
+
+@mixin responsove-hide {
+    
+}
+
+
 @mixin responsive-limitstatic($max-width, $type) {
 
     @media (max-width: $max-width) {

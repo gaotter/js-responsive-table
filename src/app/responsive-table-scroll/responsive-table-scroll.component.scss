@@ -1,0 +1,42 @@
+@import "./../css/responsive-table.scss";
+@import "./../css/responsive-table-mixins.scss";
+
+@include initalValuesStatic();
+
+.table {
+    //max-width: 500px;
+    //overflow: hidden;
+}
+
+.w {
+    overflow: hidden;
+    width: 100%px;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%px;
+}
+
+.movepopup {
+    display: none;
+    right: 30px;
+
+    &.left {
+        left: 30px;
+        right: auto;
+    }
+
+    &.show {
+        display: block;
+        position: absolute;
+        top: 50vh;
+
+        width: 30px;
+        height: 30px;
+
+        z-index: 1;
+        background-color: #fff00f;
+    }
+}
