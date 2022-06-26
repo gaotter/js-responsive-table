@@ -6,17 +6,30 @@
 .table {
     //max-width: 500px;
     //overflow: hidden;
+    width: 1024px;
+}
+
+.scroll-buttons {
+    display: flex;
+    flex-direction: row;
+
+    div {
+        background-color: #aaaaaa;
+        margin-right: 5px;
+    }
+    margin: 10px 0;
 }
 
 .w {
     overflow: hidden;
-    width: 100%px;
+    width: 1024px;
 }
 
 .wrapper {
     position: relative;
     overflow: hidden;
-    width: 100%px;
+    width: 95vw;
+    height: 80vh;
 }
 
 .movepopup {

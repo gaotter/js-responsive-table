@@ -1,22 +1,29 @@
-<div class="wrapper">
-    <div class="w">
-        <div #table class="table" (mouseover)="onMouseOver($event)" id="scroll-table" [ngStyle]="{'margin-left': maginleft}" *ngIf="tableModel">
-            <div class="header-rows">
-                <div class="header" [ngClass]="[header.dataSize, header.screen.screenid, header.screen.down]"
-                    *ngFor="let header of tableModel.headers">
-                    {{header.headerDisplay}}
+
+<div class="scroll-buttons">
+    <div (click)="goToStart()">Start</div>
+    <div (click)="goToMiddle()">Middle</div>
+    <div (click)="goToEnd()">End</div>
+</div>
+<div class="wrapper">    
+    <perfect-scrollbar>
+        <div class="w">
+            <div #table class="table" (mouseover)="onMouseOver($event)" id="scroll-table"
+                [ngStyle]="{'margin-left': maginleft}" *ngIf="tableModel">
+                <div class="header-rows">
+                    <div class="header" [ngClass]="[header.dataSize, header.screen.screenid, header.screen.down]"
+                        *ngFor="let header of tableModel.headers">
+                        {{header.headerDisplay}}
+                    </div>
                 </div>
-            </div>
-            <div class="rows" (click)="onShowClicked(rowData)"  [ngClass]="{'show': rowData.show}"
-                *ngFor="let rowData of tableModel.rows">
-                <div class="cell"  [ngClass]="[tableModel.headers[i].dataSize, 
+                <div class="rows" (click)="onShowClicked(rowData)" [ngClass]="{'show': rowData.show}"
+                    *ngFor="let rowData of tableModel.rows">
+                    <div class="cell" [ngClass]="[tableModel.headers[i].dataSize, 
         tableModel.headers[i].screen.screenid, 
         tableModel.headers[i].screen.down]" *ngFor="let cellData of rowData.textElements; let i = index">
-                    <div class="cellheader">{{tableModel.headers[i].headerDisplay}}</div> {{ cellData.value }}
+                        <div class="cellheader">{{tableModel.headers[i].headerDisplay}}</div> {{ cellData.value }}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="movepopup right" (click)="moveRight($event)" [ngClass]="{'show':showPopupRight}">>></div>
-    <div class="movepopup left" (click)="moveLeft($event)" [ngClass]="{'show':showPopupLeft}"><<</div>
+    </perfect-scrollbar>
 </div>
