@@ -1,0 +1,10 @@
+<div class="table" *ngIf="tableModel">
+    <div class="header-rows">
+        <div class="header" *ngFor="let header of headers; let i = index">
+            <ng-container *ngTemplateOutlet="header.template"></ng-container>
+        </div>
+    </div>
+    <div class="rows" (click)="onShowClicked(rowData)" [ngClass="{'show'}"]>
+
+    </div>
+</div>

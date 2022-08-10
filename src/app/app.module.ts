@@ -15,13 +15,14 @@ import { TestTextversionComponent } from './tester/test-textversion.component';
 import { TextValuePipe } from './pips/text-value.pipe';
 import { ResponsiveTableScrollComponent } from './responsive-table-scroll/responsive-table-scroll.component';
 import { TestDevVersionScrollComponent } from './tester/test-dev-version-scroll/test-dev-version-scroll.component';
+import { ResponsiveTableGridComponent } from './responsive-table-grid/responsive-table-grid.component';
 
 
 
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ResponsiveTableModule],
-  declarations: [AppComponent, ResponsiveTableDivComponent, HelloComponent, ResponsiveTableTemplateComponent, ElementSelectorDirective, TesterComponent, TestTemplateversionComponent, TestTextversionComponent, TextValuePipe, ResponsiveTableScrollComponent, TestDevVersionScrollComponent],
+  declarations: [AppComponent, ResponsiveTableDivComponent, HelloComponent, ResponsiveTableTemplateComponent, ElementSelectorDirective, TesterComponent, TestTemplateversionComponent, TestTextversionComponent, TextValuePipe, ResponsiveTableScrollComponent, TestDevVersionScrollComponent, ResponsiveTableGridComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
