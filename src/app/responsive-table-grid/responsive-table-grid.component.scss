@@ -1,0 +1,13 @@
+.table {
+    .header-rows {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        border: 1px solid red;
+    }
+
+    .rows {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        border: 1px solid red;
+    }
+}

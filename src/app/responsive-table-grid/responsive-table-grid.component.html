@@ -4,7 +4,10 @@
             <ng-container *ngTemplateOutlet="header.template"></ng-container>
         </div>
     </div>
-    <div class="rows" (click)="onShowClicked(rowData)" [ngClass="{'show'}"]>
-
+    <div class="rows" (click)="onShowClicked(rowData)" [ngClass]="{'show':rowData.show}" *ngFor="let rowData of tableModel.rows">
+        <div class="cell" *ngFor="let cellTemplate of cells; let i = index">
+            <ng-container *ngTemplateOutlet="cellTemplate.template;context:{dataentry:rowData}"></ng-container>
+        </div>
+        
     </div>
 </div>
