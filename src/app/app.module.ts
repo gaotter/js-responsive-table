@@ -15,15 +15,41 @@ import { TestTextversionComponent } from './tester/test-textversion.component';
 import { TextValuePipe } from './pips/text-value.pipe';
 import { ResponsiveTableScrollComponent } from './responsive-table-scroll/responsive-table-scroll.component';
 import { TestDevVersionScrollComponent } from './tester/test-dev-version-scroll/test-dev-version-scroll.component';
+
 import { ResponsiveTableGridComponent } from './responsive-table-grid/responsive-table-grid.component';
 import { TestGidVersionComponent } from './tester/test-gid-version.component';
 
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
-
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: false
+};
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ResponsiveTableModule],
-  declarations: [AppComponent, ResponsiveTableDivComponent, HelloComponent, ResponsiveTableTemplateComponent, ElementSelectorDirective, TesterComponent, TestTemplateversionComponent, TestTextversionComponent, TextValuePipe, ResponsiveTableScrollComponent, TestDevVersionScrollComponent, ResponsiveTableGridComponent, TestGidVersionComponent],
+
+  imports: [BrowserModule, FormsModule,PerfectScrollbarModule, ResponsiveTableModule],
+  declarations: [AppComponent,
+    ResponsiveTableDivComponent,
+    HelloComponent,
+    ResponsiveTableTemplateComponent,
+    ElementSelectorDirective,
+    TesterComponent,
+    TestTemplateversionComponent,
+    TestTextversionComponent,
+    TextValuePipe,
+    ResponsiveTableScrollComponent,
+    TestGidVersionComponent,
+    ResponsiveTableGridComponent,
+    TestDevVersionScrollComponent],
+    providers: [
+      {
+        provide: PERFECT_SCROLLBAR_CONFIG,
+        useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+      }
+    ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
