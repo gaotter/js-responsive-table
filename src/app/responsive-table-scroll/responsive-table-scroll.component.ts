@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, ContentChild, ElementRef, ViewChild } from '@angular/core';
 import { IResponsiveTableModelText } from '../responsive-table/models/responsive-table.model';
-import { PerfectScrollbarComponent } from 'ngx-perfect-scrollbar';
 
 @Component({
   selector: 'app-responsive-table-scroll',
@@ -12,8 +11,6 @@ export class ResponsiveTableScrollComponent implements OnInit {
   @ViewChild("table") tableDiv: ElementRef;
 
   @ViewChild("container", { read: ElementRef }) perScrollElement: ElementRef;
-
-  @ViewChild(PerfectScrollbarComponent) perScrollComp: PerfectScrollbarComponent;
 
   start = 0;
   maginleft = "0";
@@ -37,14 +34,9 @@ export class ResponsiveTableScrollComponent implements OnInit {
 
 
   goToStart() {
-    console.log("pf", this.perScrollComp);
-    this.perScrollComp.directiveRef.scrollToX(0);
   }
 
   goToMiddle() {
-    console.log("pf wel", this.perScrollComp.directiveRef.elementRef.nativeElement.scrollLeftMax);
-    console.log("pf", this.perScrollComp.directiveRef.position(true), this.perScrollComp.directiveRef.ps(),window.innerWidth , window.innerWidth / 2);
-    this.perScrollComp.directiveRef.scrollToX(this.perScrollComp.directiveRef.elementRef.nativeElement.scrollLeftMax / 2);
    //  this.perScrollComp.directiveRef.scrollToX(789 / 2);
 
 
@@ -66,7 +58,6 @@ export class ResponsiveTableScrollComponent implements OnInit {
 
   goToEnd() {
    
-    this.perScrollComp.directiveRef.scrollToX(1024);
   }
 
   moveRight($event) {

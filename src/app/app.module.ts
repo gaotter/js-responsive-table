@@ -19,17 +19,9 @@ import { TestDevVersionScrollComponent } from './tester/test-dev-version-scroll/
 import { ResponsiveTableGridComponent } from './responsive-table-grid/responsive-table-grid.component';
 import { TestGidVersionComponent } from './tester/test-gid-version.component';
 
-import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
-const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
-  suppressScrollX: false
-};
-
 @NgModule({
 
-  imports: [BrowserModule, FormsModule,PerfectScrollbarModule, ResponsiveTableModule],
+  imports: [BrowserModule, FormsModule, ResponsiveTableModule],
   declarations: [AppComponent,
     ResponsiveTableDivComponent,
     HelloComponent,
@@ -42,13 +34,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ResponsiveTableScrollComponent,
     TestGidVersionComponent,
     ResponsiveTableGridComponent,
-    TestDevVersionScrollComponent],
-    providers: [
-      {
-        provide: PERFECT_SCROLLBAR_CONFIG,
-        useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-      }
-    ],
+    TestDevVersionScrollComponent],  
 
   bootstrap: [AppComponent]
 })
