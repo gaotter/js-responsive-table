@@ -8,8 +8,9 @@ describe('TestTextversionComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestTextversionComponent ]
-    })
+    declarations: [TestTextversionComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

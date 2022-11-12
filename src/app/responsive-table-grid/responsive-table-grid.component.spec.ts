@@ -8,8 +8,9 @@ describe('ResponsiveTableGridComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResponsiveTableGridComponent ]
-    })
+    declarations: [ResponsiveTableGridComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

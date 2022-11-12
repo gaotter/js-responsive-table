@@ -8,8 +8,9 @@ describe('TestDevVersionScrollComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestDevVersionScrollComponent ]
-    })
+    declarations: [TestDevVersionScrollComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

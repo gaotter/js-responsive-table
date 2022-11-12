@@ -8,8 +8,9 @@ describe('ResponsiveTableDivComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResponsiveTableDivComponent ]
-    })
+    declarations: [ResponsiveTableDivComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

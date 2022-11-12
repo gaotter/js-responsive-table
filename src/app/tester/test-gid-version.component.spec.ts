@@ -8,8 +8,9 @@ describe('TestGidVersionComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestGidVersionComponent ]
-    })
+    declarations: [TestGidVersionComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

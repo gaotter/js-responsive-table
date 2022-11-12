@@ -8,8 +8,9 @@ describe('ResponsiveTableTemplateComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResponsiveTableTemplateComponent ]
-    })
+    declarations: [ResponsiveTableTemplateComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

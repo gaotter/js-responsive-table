@@ -8,8 +8,9 @@ describe('ResponsiveTableScrollComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResponsiveTableScrollComponent ]
-    })
+    declarations: [ResponsiveTableScrollComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 
