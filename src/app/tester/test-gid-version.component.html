@@ -23,7 +23,7 @@
     </ng-template>
     <!-- Rows -->
     <ng-template appElementSelector [identifiler]="'cell'" let-rowdata="dataentry">
-        <div>YO man</div> {{rowdata.row.address}}
+        {{rowdata.row.address}}
     </ng-template>
     <ng-template appElementSelector [identifiler]="'cell'" let-rowdata="dataentry">
         {{rowdata.row.description}}
@@ -35,7 +35,7 @@
         {{rowdata.row.lastSalesPrice}}
     </ng-template>
     <ng-template appElementSelector [identifiler]="'cell'" let-rowdata="dataentry">
-        {{rowdata.row.shareNumber}} testette
+        {{rowdata.row.shareNumber}}
     </ng-template>
 
 </app-responsive-table-grid>
