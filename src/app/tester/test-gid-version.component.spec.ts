@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { TestDevVersionScrollComponent } from './test-dev-version-scroll.component';
+import { TestGidVersionComponent } from './test-gid-version.component';
 
-describe('TestDevVersionScrollComponent', () => {
-  let component: TestDevVersionScrollComponent;
-  let fixture: ComponentFixture<TestDevVersionScrollComponent>;
+describe('TestGidVersionComponent', () => {
+  let component: TestGidVersionComponent;
+  let fixture: ComponentFixture<TestGidVersionComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [TestDevVersionScrollComponent],
+    declarations: [TestGidVersionComponent],
     teardown: { destroyAfterEach: false }
 })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TestDevVersionScrollComponent);
+    fixture = TestBed.createComponent(TestGidVersionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

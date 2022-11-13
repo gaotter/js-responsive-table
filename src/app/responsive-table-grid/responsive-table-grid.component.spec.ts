@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { TestDevVersionScrollComponent } from './test-dev-version-scroll.component';
+import { ResponsiveTableGridComponent } from './responsive-table-grid.component';
 
-describe('TestDevVersionScrollComponent', () => {
-  let component: TestDevVersionScrollComponent;
-  let fixture: ComponentFixture<TestDevVersionScrollComponent>;
+describe('ResponsiveTableGridComponent', () => {
+  let component: ResponsiveTableGridComponent;
+  let fixture: ComponentFixture<ResponsiveTableGridComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [TestDevVersionScrollComponent],
+    declarations: [ResponsiveTableGridComponent],
     teardown: { destroyAfterEach: false }
 })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TestDevVersionScrollComponent);
+    fixture = TestBed.createComponent(ResponsiveTableGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

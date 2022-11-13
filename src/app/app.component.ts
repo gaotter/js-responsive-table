@@ -5,7 +5,8 @@ enum selections {
   basic = "Basic",
   div = "Model based",
   template = "Template based",
-  divscroll = "Model based scroll"
+  divscroll = "Model based scroll",
+  grid = "Grid version"
 }
 
 
@@ -16,7 +17,7 @@ enum selections {
 })
 export class AppComponent {
  
-  selected:selections = selections.divscroll;
+  selected:selections = selections.grid;
   selectionsref = selections;
 
   sels = Object.keys(selections).map(key => { 
