@@ -26,11 +26,12 @@
         border: 1px solid #333aaa;
         border-top: none;
         overflow: hidden;
-        max-height: 30px;
+       height: 30px;
 
-        transition: max-height 500ms;
+        //transition: max-height 500ms;
+        transition: height 500ms;
         &.show {
-            max-height: 200px;
+            height: fit-content;
         }
 
         .cell {
