@@ -1,0 +1,40 @@
+<app-responsive-table-js [tableModel]="tableModel">
+     <!-- headers -->
+     <ng-template appElementSelector [identifiler]="'header'"
+     [data]="{down:'down', screenid:'screen-semi-large', dataSize:'medium'}">
+     Addresse
+ </ng-template>
+ <ng-template appElementSelector [identifiler]="'header'"
+     [data]="{down:'down', screenid:'screen-medium', dataSize:'large'}">
+     Bekrivelse
+ </ng-template>
+ <ng-template appElementSelector [identifiler]="'header'"
+     [data]="{down:'down', screenid:'screen-semi-medium', dataSize:'micro'}">
+     Etasjer
+ </ng-template>
+ <ng-template appElementSelector [identifiler]="'header'"
+     [data]="{down:'down', screenid:'screen-small', dataSize:'small'}">
+     Salgs pris
+ </ng-template>
+ <ng-template appElementSelector [identifiler]="'header'" 
+     [data]="{down:'', screenid:'', dataSize:'micro'}">
+     Andeler
+ </ng-template>
+ <!-- Rows -->
+ <ng-template appElementSelector [identifiler]="'cell'" let-rowdata="dataentry" [data]="{dataSize:'large'}">
+     {{rowdata.row.address}}
+ </ng-template>
+ <ng-template appElementSelector [identifiler]="'cell'" let-rowdata="dataentry" [data]="{dataSize:'large'}">
+     {{rowdata.row.description}}
+ </ng-template>
+ <ng-template appElementSelector [identifiler]="'cell'" let-rowdata="dataentry" [data]="{dataSize:'large'}">
+     {{rowdata.row.floor}}
+ </ng-template>
+ <ng-template appElementSelector [identifiler]="'cell'" let-rowdata="dataentry" [data]="{dataSize:'large'}">
+     {{rowdata.row.lastSalesPrice}}
+ </ng-template>
+ <ng-template appElementSelector [identifiler]="'cell'" let-rowdata="dataentry" [data]="{dataSize:'large'}">
+     {{rowdata.row.shareNumber}}
+ </ng-template>
+
+</app-responsive-table-js>

@@ -1,0 +1,36 @@
+@mixin breaks ($rows) {
+    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;    
+}
+
+.table {
+    .header-rows {
+        display: grid;
+        @include breaks(1fr 3fr 1fr 1fr);
+        border: 1px solid #333aaa;
+        max-height: 30px;
+        overflow: hidden;
+        .header {
+            padding: 10px 10px;
+        }
+    }
+
+    .rows {
+        display: grid;
+        @include breaks(1fr 3fr 1fr 1fr);
+        border: 1px solid #333aaa;
+        border-top: none;
+        overflow: hidden;
+       height: 30px;
+
+        //transition: max-height 500ms;
+        transition: height 500ms;
+        &.show {
+            height: fit-content;
+        }
+
+        .cell {
+            padding: 10px 10px;
+        }
+    }
+}
+

@@ -18,6 +18,8 @@ import { TestDevVersionScrollComponent } from './tester/test-dev-version-scroll/
 
 import { ResponsiveTableGridComponent } from './responsive-table-grid/responsive-table-grid.component';
 import { TestGidVersionComponent } from './tester/test-gid-version.component';
+import { ResponsiveTableJsComponent } from './responsive-table-js/responsive-table-js.component';
+import { TestJsVersionComponent } from './tester/test-js-version.component';
 
 @NgModule({
 
@@ -34,7 +36,9 @@ import { TestGidVersionComponent } from './tester/test-gid-version.component';
     ResponsiveTableScrollComponent,
     TestGidVersionComponent,
     ResponsiveTableGridComponent,
-    TestDevVersionScrollComponent],  
+    TestDevVersionScrollComponent,
+    ResponsiveTableJsComponent,
+    TestJsVersionComponent],  
 
   bootstrap: [AppComponent]
 })
