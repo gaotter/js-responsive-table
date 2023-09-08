@@ -1,0 +1,55 @@
+
+.table {
+    background-color: bisque;
+}
+
+.table .header-rows {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    background-color: aqua;
+}
+
+.table .rows {
+    display: grid;
+    /* grid-template-columns: 2fr 1fr 1fr 1fr; */
+    /* grid-template-areas: 
+       "a b"
+       "c ."
+       "d ."       ; */
+}
+
+.header {
+    border: 1px solid black;
+}
+
+.cell {
+    border: 1px solid black;
+}
+
+.grid-area-1 {
+    grid-area: a;
+}
+
+.grid-area-2 {
+    grid-area: b;
+}
+
+.grid-area-3 {
+    grid-area: c;
+}
+
+.grid-area-4 {
+    grid-area: d;
+}
+
+ .grid-area-5 {
+    grid-area: 5;
+}
+
+.grid-area-6 {
+    grid-area: 6;
+}
+
+.gird-area-7 {
+    grid-area: 7;
+} 
