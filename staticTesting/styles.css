@@ -5,51 +5,77 @@
 
 .table .header-rows {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 20px;
     background-color: aqua;
+    grid-template-areas: 
+       "a b c d ex";
 }
 
 .table .rows {
     display: grid;
-    /* grid-template-columns: 2fr 1fr 1fr 1fr; */
-    /* grid-template-areas: 
-       "a b"
-       "c ."
-       "d ."       ; */
+    grid-template-columns: 2fr 1fr 1fr 1fr 20px; 
+    grid-template-areas: 
+       "a b c d ex";    
+}
+
+@media screen and (max-width:700px) {
+    .table .header-rows {
+        
+        grid-template-columns: 2fr 1fr 20px;
+        grid-template-areas: 
+       "a c ex";
+    }
+
+    .table .header-rows .grid-area-d {display: none;}
+    .table .header-rows .grid-area-b {display: none;}        
+
+    .table .rows .grid-area-d {display: none;}
+    .table .rows .grid-area-b {display: none;}    
+
+    .table .rows.show .grid-area-d {display: block; border-width: 0 1px 0 1px;}
+    .table .rows.show .grid-area-b {display: block; border-width: 0 1px 0 1px;}
+    
+    .table .rows {
+        grid-template-columns: 2fr 1fr 20px; 
+        grid-template-areas: 
+           "a c ex"
+           "d . ."
+           "b . .";
+    }   
 }
 
 .header {
     border: 1px solid black;
 }
 
+.header .grid-expand {
+    height: 100px;
+}
+
 .cell {
     border: 1px solid black;
 }
 
-.grid-area-1 {
+.grid-area-a {
     grid-area: a;
 }
 
-.grid-area-2 {
+.grid-area-b {
     grid-area: b;
 }
 
-.grid-area-3 {
+.grid-area-c {
     grid-area: c;
 }
 
-.grid-area-4 {
+.grid-area-d {
     grid-area: d;
 }
 
- .grid-area-5 {
-    grid-area: 5;
+.grid-expand {
+    grid-area: ex;
 }
-
-.grid-area-6 {
-    grid-area: 6;
+.show
+{
+    display: block;
 }
-
-.gird-area-7 {
-    grid-area: 7;
-} 
