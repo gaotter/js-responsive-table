@@ -25,18 +25,13 @@ export class TestTextversionComponent implements OnInit {
         row: d,
         textElements: [
           {
-            value: d.address,
+            value: d.title,
           },
           {
-            value: d.description
-          },
-          {
-            value: d.floor
+            value: ""
           },{
             value: d.lastSalesPrice ? d.lastSalesPrice.toString(): "0",
             type:"number"
-          },{
-            value:d.shareNumber ? d.shareNumber : "0"
           }
         ]
       }
@@ -48,7 +43,7 @@ export class TestTextversionComponent implements OnInit {
       headers: [
         {
           dataSize: "medium",
-          headerDisplay: "Addresse",
+          headerDisplay: "Title",
           screen:{
             down:"down",
             screenid:"screen-semi-large"
@@ -63,28 +58,12 @@ export class TestTextversionComponent implements OnInit {
           }
         },
         {
-          dataSize: "micro",
-          headerDisplay: "etasjer",
-          screen:{
-            down:"down",
-            screenid:"screen-semi-medium"
-          }
-        },
-        {
           dataSize: "small",
           headerDisplay: "salgs pris",
           screen:{
             down:"down",
             screenid:"screen-small"
           }   
-        },
-        {
-          dataSize: "micro",
-          headerDisplay: "share",
-          screen:{
-            down:"",
-            screenid:""
-          }          
         }
       ]
     }

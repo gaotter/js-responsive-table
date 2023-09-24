@@ -1,29 +1,23 @@
 <div (click)="setAsPri()">Basic version</div>
 <div class="table">
         <div class="header-rows">
-            <div class="header" (click)="onSort('estateType')">
-                estateType
+            <div class="header" (click)="onSort('title')">
+                Title
             </div>
             <div class="header" (click)="onSort('address')">
-                address
+                Bekrivelse
             </div>
             <div class="header" (click)="onSort('lastSaleDate')">
-                lastSaleDate
+                updated
             </div>
             <div class="header" (click)="onSort('lastSalesPrice')">
                 lastSalesPrice
-            </div>
-            <div class="header" (click)="onSort('livingArea')">
-                livingArea
-            </div>
-            <div class="header" (click)="onSort('transactionTime')">
-                t time
             </div>
         </div>
     <div *ngFor="let sale of mapped" class="rows" [ngClass]="{'show':sale.show}"
         (click)="sale.show = !sale.show">
         <div class="cell">
-            <div class="cellheader">estateType</div> {{sale.row.estateType}}
+            <div class="cellheader">title</div> {{sale.row.estateType}}
         </div>
         <div class="cell">
             <div></div>
@@ -31,16 +25,10 @@
             <div class="popup" [ngClass]="{'hidden':hidden}"></div>
         </div>
         <div class="cell">
-            <div class="cellheader">price</div> {{sale.row.lastSaleDate}}
+            <div class="cellheader">bekrivelse</div> {{sale.row.bekrivelse}}
         </div>
         <div class="cell">
             <div class="cellheader">as price</div> {{sale.row.lastSalesPrice}}
-        </div>
-        <div class="cell">
-            <div class="cellheader">sq mt</div> {{sale.row.livingArea}}
-        </div>
-        <div class="cell">
-            <div class="cellheader">t time</div> {{sale.row.transactionTime}}
         </div>
     </div>
 
