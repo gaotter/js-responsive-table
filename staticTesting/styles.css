@@ -1,0 +1,100 @@
+
+.table {
+    background-color: bisque;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+}
+
+.table .header-rows {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 20px;
+    background-color: aqua;
+    grid-template-areas: 
+       "a b c d ex";
+}
+
+.table .rows {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 20px; 
+    grid-template-areas: 
+       "a b c d ex";    
+}
+
+.table .rows .cell {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 0 1px 1px;
+}
+
+.table .rows .cell:first-child {
+    border-left: none;
+}
+
+.table .rows:last-child {
+    border-bottom: 1px solid black;
+}
+
+.table .header-rows .header {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px 0 1px 1px;
+}
+
+.table .header-rows .header:first-child  {
+    border-left: none;
+}
+
+.table .header-rows .header .grid-expand {
+    height: 100px;
+}
+
+@media screen and (max-width:700px) {
+    .table .header-rows {
+        
+        grid-template-columns: 2fr 1fr 20px;
+        grid-template-areas: 
+       "a c ex";
+    }
+
+    .table .header-rows .grid-area-d {display: none;}
+    .table .header-rows .grid-area-b {display: none;}        
+
+    .table .rows .grid-area-d {display: none;}
+    .table .rows .grid-area-b {display: none;}    
+
+    .table .rows.show .grid-area-d {display: block; border: none;}
+    .table .rows.show .grid-area-b {display: block; border: none;}
+    
+    .table .rows {
+        grid-template-columns: 2fr 1fr 20px; 
+        grid-template-areas: 
+           "a c ex"
+           "d . ."
+           "b . .";
+    }   
+}
+
+.grid-area-a {
+    grid-area: a;
+}
+
+.grid-area-b {
+    grid-area: b;
+}
+
+.grid-area-c {
+    grid-area: c;
+}
+
+.grid-area-d {
+    grid-area: d;
+}
+
+.grid-expand {
+    grid-area: ex;
+}
+.show
+{
+    display: block;
+}
