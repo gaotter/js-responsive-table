@@ -1,0 +1,14 @@
+<div class="table-root">
+  <div class="table-headers">
+    <div *ngFor="let headerTemplate of headerTemplates; let i = index" [ngStyle]="{'grid-area': currentRow[i]}">
+      <ng-container *ngTemplateOutlet="headerTemplate.template; context: headerTemplate.data"></ng-container>
+    </div>
+  </div>
+  <div class="table-rows">
+      <div *ngFor="let row of rowData" class="table-row">
+        <div *ngFor="let cellTemplate of cellTemplates; let i = index" [ngStyle]="{'grid-area': currentRow[i]}">
+          <ng-container *ngTemplateOutlet="cellTemplate.template; context: row"></ng-container>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<app-template-table [rowData]="testData">
+  <ng-template appElementSelector [isHeader]="true" >Title</ng-template>
+  <ng-template appElementSelector [isHeader]="true" >Bekrivelse</ng-template>
+  <ng-template appElementSelector [isHeader]="true" >updated</ng-template>
+  <ng-template appElementSelector [isHeader]="true" >Salgs pris</ng-template>
+  <ng-template appElementSelector [isHeader]="true" >Status</ng-template>
+
+  <ng-template appElementSelector let-title="title">
+    <div>{{title}}</div>
+  </ng-template>
+  <ng-template appElementSelector let-description="description">
+    <div>{{description}}</div>
+  </ng-template>
+  <ng-template appElementSelector let-date="date">
+    <div>{{date}}</div>
+  </ng-template>
+  <ng-template appElementSelector let-amount="amount">
+    <div>{{amount}}</div>
+  </ng-template>
+  <ng-template appElementSelector let-status="status">
+    <div>{{status}}</div>
+  </ng-template>
+</app-template-table>

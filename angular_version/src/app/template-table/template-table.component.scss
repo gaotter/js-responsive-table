@@ -1,0 +1,25 @@
+.table-root {
+  display: grid;
+  grid-template-areas:
+       "headers"
+       "rows";
+
+  .table-headers {
+    grid-area: headers;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "a c b d e";
+  }
+
+  .table-rows {
+    grid-area: rows;
+
+    .table-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+      "a c b d e";
+    }
+  }
+}
