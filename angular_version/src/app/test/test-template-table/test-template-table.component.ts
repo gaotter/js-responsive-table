@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ElementSelectorDirective } from 'src/app/element-selector.directive';
 import { TemplateTableComponent } from 'src/app/template-table/template-table.component';
+import { ITemplateTableModel } from 'src/app/template-table/template-table.model';
 
 @Component({
   selector: 'app-test-template-table',
@@ -22,4 +23,22 @@ export class TestTemplateTableComponent {
     {title: 'Title 9', description: 'Description 9', date: 'Date 9', amount: 'Amount 9', status: 'Status 9'},
     {title: 'Title 10', description: 'Description 10', date: 'Date 10', amount: 'Amount 10', status: 'Status 10'}
   ];
+
+  public displayTemplate: ITemplateTableModel = {
+    gridAreas: 'title description date amount status',
+    brakePoints : [
+      {
+        gridAreas: '"title description date" "amount . ." "status . ."',
+        gridColums: '1fr 1fr 1fr',
+        maxWith: 600
+      }, {
+        maxWith: 900,
+        gridAreas: '"title description date amount status"',
+        gridColums: '1fr 1fr 1fr 1fr 1fr'
+      }
+
+
+    ]
+  }
+
 }
