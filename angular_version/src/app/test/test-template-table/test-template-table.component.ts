@@ -28,16 +28,23 @@ export class TestTemplateTableComponent {
     gridAreas: 'title description date amount status',
     brakePoints : [
       {
-        gridAreas: '"title description date" "amount . ." "status . ."',
-        gridColums: '1fr 1fr 1fr',
+        gridAreas: '"title date" "amount ." "status ." "description ."',
+        gridColums: '1fr 1fr',
+        maxWith: 400
+      },
+      {
+        gridAreas: '"title date description" "amount . ." "status . ."',
+        gridColums: '2fr 1fr 1fr',
         maxWith: 600
-      }, {
-        maxWith: 900,
+      },{
+        gridAreas: '"title description date status" "amount . . ."',
+        gridColums: '1fr 1fr 1fr 1fr',
+        maxWith: 700
+      }, {        
         gridAreas: '"title description date amount status"',
-        gridColums: '1fr 1fr 1fr 1fr 1fr'
+        gridColums: '1fr 1fr 1fr 1fr 1fr',
+        maxWith: 2000,
       }
-
-
     ]
   }
 

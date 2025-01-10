@@ -7,9 +7,6 @@
   .table-headers {
     grid-area: headers;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-    "a c b d e";
   }
 
   .table-rows {
@@ -17,9 +14,6 @@
 
     .table-row {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      grid-template-areas:
-      "a c b d e";
     }
   }
 }

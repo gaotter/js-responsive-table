@@ -1,13 +1,13 @@
 
 
-export interface ITemplateTableModel {
+export interface ITemplateTableModel {    
     gridAreas: string;
     brakePoints: ITemplateDisplayBreakPoint[];
 }
 
 
 interface ITemplateDisplayBreakPoint {
-   maxWith: number;
-   gridColums: string;
-   gridAreas: string;
+    maxWith: number;
+    gridColums: string;
+    gridAreas: string;
 }
