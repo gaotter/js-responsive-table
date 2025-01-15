@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { ElementSelectorDirective } from 'src/app/element-selector.directive';
+import { SemTableComponent } from 'src/app/sem-table/sem-table.component';
+import { SemTdComponent } from 'src/app/sem-td/sem-td.component';
+import { SemTheadComponent } from 'src/app/sem-thead/sem-thead.component';
+import { SemTrComponent } from 'src/app/sem-tr/sem-tr.component';
 import { TemplateTableComponent } from 'src/app/template-table/template-table.component';
 import { ITemplateTableModel } from 'src/app/template-table/template-table.model';
 
@@ -8,7 +12,7 @@ import { ITemplateTableModel } from 'src/app/template-table/template-table.model
   standalone: true,
   templateUrl: './test-template-table.component.html',
   styleUrls: ['./test-template-table.component.scss'],
-  imports: [ElementSelectorDirective, TemplateTableComponent]
+  imports: [ElementSelectorDirective, TemplateTableComponent, SemTableComponent, SemTheadComponent, SemTdComponent, SemTrComponent]
 })
 export class TestTemplateTableComponent {
   testData = [
@@ -42,8 +46,7 @@ export class TestTemplateTableComponent {
         maxWith: 700
       }, {        
         gridAreas: '"title description date amount status"',
-        gridColums: '1fr 1fr 1fr 1fr 1fr',
-        maxWith: 2000,
+        gridColums: '1fr 1fr 1fr 1fr 1fr'
       }
     ]
   }

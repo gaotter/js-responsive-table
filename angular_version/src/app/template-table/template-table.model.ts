@@ -7,7 +7,7 @@ export interface ITemplateTableModel {
 
 
 interface ITemplateDisplayBreakPoint {
-    maxWith: number;
+    maxWith?: number | null;
     gridColums: string;
     gridAreas: string;
 }

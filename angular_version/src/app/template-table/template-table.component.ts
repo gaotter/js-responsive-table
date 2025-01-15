@@ -69,7 +69,9 @@ export class TemplateTableComponent implements OnInit, AfterContentInit {
   }
 
   private setUpDisplayGrid(areas: string[] | undefined) {
-    const breakPoint = this.breakPoints?.brakePoints.find(b => b.maxWith > this.innerWidth);
+    const breakPoint = 
+      this.breakPoints?.brakePoints.find(b => b.maxWith != null && b.maxWith > this.innerWidth) ||
+      this.breakPoints?.brakePoints.find(b => b.maxWith == null);
 
     let allareas = breakPoint?.gridAreas.split('" "') || [];
     allareas = allareas.map((area, i) => i > 0 ? area.replace(/"/g, '') + ' .' : area.replace(/"/g, ''));

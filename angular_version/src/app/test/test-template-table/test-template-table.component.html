@@ -1,4 +1,4 @@
-<app-template-table [rowData]="testData" [breakPoints]="displayTemplate">
+<!-- <app-template-table [rowData]="testData" [breakPoints]="displayTemplate">
   <ng-template appElementSelector [isHeader]="true" >Title</ng-template>
   <ng-template appElementSelector [isHeader]="true" >Bekrivelse</ng-template>
   <ng-template appElementSelector [isHeader]="true" >Updated</ng-template>
@@ -20,4 +20,21 @@
   <ng-template appElementSelector let-status="status">
     <div>{{status}}</div>
   </ng-template>
-</app-template-table>
+</app-template-table> -->
+
+<app-sem-table>
+  <app-sem-thead>
+    <app-sem-td>Title</app-sem-td>
+    <app-sem-td>Bekrivelse</app-sem-td>
+    <app-sem-td>Salgs pris</app-sem-td>
+    <app-sem-td>Status</app-sem-td>
+  </app-sem-thead>
+  <app-sem-tr>
+    @for(data of testData; track data) {
+      <app-sem-td>{{ data.title }}</app-sem-td>
+      <app-sem-td>{{ data.description }}</app-sem-td>
+      <app-sem-td>{{ data.amount }}</app-sem-td>
+      <app-sem-td>{{ data.status }}</app-sem-td>
+    }
+  </app-sem-tr>
+</app-sem-table>
