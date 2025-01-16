@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ElementSelectorDirective } from 'src/app/element-selector.directive';
-import { SemTableComponent } from 'src/app/sem-table/sem-table.component';
-import { SemTdComponent } from 'src/app/sem-td/sem-td.component';
-import { SemTheadComponent } from 'src/app/sem-thead/sem-thead.component';
-import { SemTrComponent } from 'src/app/sem-tr/sem-tr.component';
+import { SegTableComponent } from 'src/app/seg-table/seg-table.component';
+import { SegTdComponent } from 'src/app/seg-td/seg-td.component';
+import { SegTheadComponent } from 'src/app/seg-thead/seg-thead.component';
+import { SegTrComponent } from 'src/app/seg-tr/seg-tr.component';
 import { TemplateTableComponent } from 'src/app/template-table/template-table.component';
 import { ITemplateTableModel } from 'src/app/template-table/template-table.model';
 
@@ -12,7 +12,7 @@ import { ITemplateTableModel } from 'src/app/template-table/template-table.model
   standalone: true,
   templateUrl: './test-template-table.component.html',
   styleUrls: ['./test-template-table.component.scss'],
-  imports: [ElementSelectorDirective, TemplateTableComponent, SemTableComponent, SemTheadComponent, SemTdComponent, SemTrComponent]
+  imports: [ElementSelectorDirective, TemplateTableComponent, SegTableComponent, SegTdComponent, SegTrComponent, SegTheadComponent]
 })
 export class TestTemplateTableComponent {
   testData = [
@@ -32,16 +32,16 @@ export class TestTemplateTableComponent {
     gridAreas: 'title description date amount status',
     brakePoints : [
       {
-        gridAreas: '"title date" "amount ." "status ." "description ."',
+        gridAreas: '"title date" "amount amount" "status status" "description description"',
         gridColums: '1fr 1fr',
         maxWith: 400
       },
       {
-        gridAreas: '"title date description" "amount . ." "status . ."',
+        gridAreas: '"title date description" "amount amount amount" "status status status"',
         gridColums: '2fr 1fr 1fr',
         maxWith: 600
       },{
-        gridAreas: '"title description date status" "amount . . ."',
+        gridAreas: '"title description date status" "amount amount amount amount"',
         gridColums: '1fr 1fr 1fr 1fr',
         maxWith: 700
       }, {        

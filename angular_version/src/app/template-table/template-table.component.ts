@@ -91,6 +91,8 @@ export class TemplateTableComponent implements OnInit, AfterContentInit {
     const gridColums = breakPoint?.gridColums + ' 20px' || '';
 
     this.styles = `grid-template-columns: ${gridColums};grid-template-areas: ${girdAreasWithExpandArray};`;
+
+    console.log('gridStyle1', this.styles);
     this.stylesHeader = `grid-template-columns: ${gridColums};grid-template-areas: ${girdAreasWithExpand};`;    
 
     this.currnetHeaderRow = this.headerTemplates.map((row, i) => {

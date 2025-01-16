@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SegTheadComponent } from './seg-thead.component';
 
-import { SemTableComponent } from './sem-table.component';
 
-describe('SemTableComponent', () => {
-  let component: SemTableComponent;
-  let fixture: ComponentFixture<SemTableComponent>;
+describe('SemTheadComponent', () => {
+  let component: SegTheadComponent;
+  let fixture: ComponentFixture<SegTheadComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SemTableComponent]
+      declarations: [SegTheadComponent]
     });
-    fixture = TestBed.createComponent(SemTableComponent);
+    fixture = TestBed.createComponent(SegTheadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

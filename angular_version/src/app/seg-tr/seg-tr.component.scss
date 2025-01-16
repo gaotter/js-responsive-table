@@ -1,0 +1,7 @@
+.sem-table-row {
+    display: grid;
+
+    .expand {
+        grid-area: extend;
+    }
+}

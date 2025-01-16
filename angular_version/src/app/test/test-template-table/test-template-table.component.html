@@ -22,19 +22,21 @@
   </ng-template>
 </app-template-table> -->
 
-<app-sem-table>
-  <app-sem-thead>
-    <app-sem-td>Title</app-sem-td>
-    <app-sem-td>Bekrivelse</app-sem-td>
-    <app-sem-td>Salgs pris</app-sem-td>
-    <app-sem-td>Status</app-sem-td>
-  </app-sem-thead>
-  <app-sem-tr>
-    @for(data of testData; track data) {
-      <app-sem-td>{{ data.title }}</app-sem-td>
-      <app-sem-td>{{ data.description }}</app-sem-td>
-      <app-sem-td>{{ data.amount }}</app-sem-td>
-      <app-sem-td>{{ data.status }}</app-sem-td>
-    }
-  </app-sem-tr>
-</app-sem-table>
+<seg-table [gridModel]="displayTemplate">
+  <seg-thead>
+    <seg-td area="title">Title</seg-td>
+    <seg-td area="description">Bekrivelse</seg-td>
+    <seg-td area="date">date</seg-td>
+    <seg-td area="amount">Salgs pris</seg-td>
+    <seg-td area="status">Status</seg-td>
+  </seg-thead>
+  @for(data of testData; track data) {
+    <seg-tr style="border: black solid 1px;">    
+        <seg-td area="title" header="Title">{{ data.title }}</seg-td>
+        <seg-td area="description" header="Description">{{ data.description }}</seg-td>
+        <seg-td area="date" header="date">{{ data.date }}</seg-td>
+        <seg-td area="amount" header="Salgs pris">{{ data.amount }}</seg-td>
+        <seg-td area="status" header="Status">{{ data.status }}</seg-td>    
+    </seg-tr>
+  }
+</seg-table>
