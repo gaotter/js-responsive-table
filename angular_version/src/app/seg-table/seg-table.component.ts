@@ -5,7 +5,6 @@ import { SegTheadComponent } from '../seg-thead/seg-thead.component';
 
 @Component({
   selector: 'seg-table',
-  standalone: true,
   templateUrl: './seg-table.component.html',
   styleUrls: ['./seg-table.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom

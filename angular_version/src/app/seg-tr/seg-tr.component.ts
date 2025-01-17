@@ -4,10 +4,10 @@ import { HostListener, ContentChildren } from '@angular/core';
 import { AfterContentInit } from '@angular/core';
 import { QueryList } from '@angular/core';
 import { SegTdComponent } from '../seg-td/seg-td.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'seg-tr',
-  standalone: true,
   templateUrl: './seg-tr.component.html',
   styleUrls: ['./seg-tr.component.scss'],
 
@@ -17,6 +17,8 @@ export class SegTrComponent implements AfterContentInit{
   private gridModel : ITemplateTableModel | undefined;
   public innerWidth: number = 0;
   public gridStyle: string = '';
+
+  public expanded: boolean = false; 
 
 
   @ContentChildren(SegTdComponent)
@@ -32,6 +34,10 @@ export class SegTrComponent implements AfterContentInit{
   ngAfterContentInit(): void {
     this.updateGridStyle();
 
+  }
+
+  public toggleExpand() {
+    this.expanded = !this.expanded;
   }
 
   public setGridModel(gridModel: ITemplateTableModel) 

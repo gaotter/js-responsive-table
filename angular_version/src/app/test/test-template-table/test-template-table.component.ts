@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { ElementSelectorDirective } from 'src/app/element-selector.directive';
-import { SegTableComponent } from 'src/app/seg-table/seg-table.component';
-import { SegTdComponent } from 'src/app/seg-td/seg-td.component';
-import { SegTheadComponent } from 'src/app/seg-thead/seg-thead.component';
-import { SegTrComponent } from 'src/app/seg-tr/seg-tr.component';
+import { SegTableModule } from 'src/app/seg-table/seg-table.module';
 import { TemplateTableComponent } from 'src/app/template-table/template-table.component';
 import { ITemplateTableModel } from 'src/app/template-table/template-table.model';
 
@@ -12,7 +9,7 @@ import { ITemplateTableModel } from 'src/app/template-table/template-table.model
   standalone: true,
   templateUrl: './test-template-table.component.html',
   styleUrls: ['./test-template-table.component.scss'],
-  imports: [ElementSelectorDirective, TemplateTableComponent, SegTableComponent, SegTdComponent, SegTrComponent, SegTheadComponent]
+  imports: [ElementSelectorDirective, TemplateTableComponent, SegTableModule]
 })
 export class TestTemplateTableComponent {
   testData = [

@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'seg-td',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './seg-td.component.html',
   styleUrls: ['./seg-td.component.scss'],
   host: {

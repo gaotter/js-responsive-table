@@ -1,4 +1,4 @@
-<div class="sem-table-row" [style]="gridStyle">
+<div class="sem-table-row" [style]="gridStyle" [ngClass]="{'expanded': expanded}">
     <ng-content></ng-content>
-    <div class="expand">x</div>
+    <div class="expand" (click)="toggleExpand()">x</div>
 </div>

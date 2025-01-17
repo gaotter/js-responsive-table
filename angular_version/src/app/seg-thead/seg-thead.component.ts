@@ -6,7 +6,6 @@ import { SegTdComponent } from '../seg-td/seg-td.component';
 
 @Component({
   selector: 'seg-thead',
-  standalone: true,
   templateUrl: './seg-thead.component.html',
   styleUrls: ['./seg-thead.component.scss']
 })

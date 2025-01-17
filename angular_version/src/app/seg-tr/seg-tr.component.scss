@@ -1,7 +1,16 @@
 .sem-table-row {
     display: grid;
+    max-height: 20px;
+    overflow: hidden;
+
+    background: #ffffff;
+    background: linear-gradient(to bottom, #ffffff 20px, red 20px);
 
     .expand {
         grid-area: extend;
+    }
+
+    &.expanded {
+        max-height: 200px;
     }
 }
